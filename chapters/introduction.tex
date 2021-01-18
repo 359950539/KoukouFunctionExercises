@@ -508,14 +508,16 @@ $$\begin{aligned}
 \section{引出不等式证明的综合题目}
 关于此类题目一些常用不等式的统一证明：
 \begin{enumerate}
-	\item \labeltext[［IEQ\ 1］]{$\mathbf{e^x\geqslant 1+x}$}{ieq1} \par
+	\item \labeltext[［IEQ\ 1］]{［IEQ\ 1］$\mathbf{e^x\geqslant 1+x}$}{ieq1} \par
 	该式截取自$e^x$的麦克劳林展开式$$e^x=1+x+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\cdots+\dfrac{x^n}{n!}+\cdots$$前两项，截取更多项时证明相仿，只需多求几次导数，不赘述。\par
 	令$g(x)=e^x-(1+x)$，则$g'(x)=e^x-1$，$g''(x)=e^x>0$，因此$g'(x)$单调增，又$g'(0)=0$，因此$g(x)$在$(-\infty,0)$上单调递减，在$(0,+\infty)$上单调递增，$\forall x\in\mathbb{R}$，$$g(x)\geqslant g(0)=0\ \Leftrightarrow\ e^x\geqslant 1+x$$
 	当仅当$x=0$时取等。
-	 \item \labeltext[［IEQ\ 2］]{$\mathbf{\ln(1+x)\leqslant x(x>-1),\ln(1+x)\geqslant x-\dfrac{x^2}{2}}(x\geqslant 0)$}{ieq2} \par
+	 \item \labeltext[［IEQ\ 2］]{［IEQ\ 2］$\mathbf{\ln(1+x)\leqslant x}\ (x>-1),\mathbf{\ln(1+x)\geqslant x-\dfrac{x^2}{2}}\ (x\geqslant 0)$}{ieq2} \par
 	该式截取自$\ln(1+x)$的麦克劳林展开式$$\ln(1+x)=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots+(-1)^{n+1}\dfrac{x^n}{n}+\cdots$$前两项，截取更多项时证明相仿，只需多求几次导数，不赘述，这里我们证第二式。\par
 	令$g(x)=\ln(1+x)-x+\dfrac{x^2}{2!}$，则$g'(x)=\dfrac{1}{1+x}-1+x$，$g''(x)=-\dfrac{1}{(1+x)^2}+1\geqslant 0$，$g'(0)=0$，因此$g(x)$在$[0,+\infty)$上单调增，$\forall x\geqslant 0$，$$g(x)\geqslant 0 \ \Rightarrow\ \ln(1+x)\geqslant x-\dfrac{x^2}{2}$$
 	当仅当$x=0$时取等。
+	\item \labeltext[［IEQ\ 3］]{［IEQ\ 3］$\mathbf{\ln x \leqslant 1-\dfrac{1}{x}}$}{ieq3} \par
+	令$g(x)=\ln x-1+\dfrac{1}{x}$，可证$g(x)\geqslant g(1)=0$，因此$\forall x\in \mathbb{R}^+,\ \ln x\geqslant 1-\dfrac{1}{x}$。
 	%\item \labeltext[［IEQ\ 3］]{$\mathbf{\ }$}{ieq2} \par
 \end{enumerate}
 \begin{que}
@@ -534,7 +536,25 @@ $$\begin{aligned}
 		 \item 若$a<0$，则$f'(x)\leqslant 0$，$f(x)$单调减，所求最值
 		$$\min_{[1-e^2,1-e]} f(x)=f(1-e)=\res{\dfrac{ae}{1-e}}\quad \max_{[1-e^2,1-e]}f(x)=f(1-e^2)=\res{\dfrac{2ae^2}{1-e^2}}$$
 	\end{enumerate}
-\end{enumerate}
+	\item 由\ref{ieq2}，$\ln(1+x)\leqslant x$，因此$$
+		\begin{aligned}&\ln\left[\left(1+\dfrac{1}{2!}\right)\left(1+\dfrac{1}{3!}\right)\cdots\left(1+\dfrac{1}{n!}\right)\right]\\=\ &\ln\left(1+\dfrac{1}{2!}\right)+\ln\left(1+\dfrac{1}{3}\right)+\cdots+\ln\left(1+\dfrac{1}{n!}\right)\\\leqslant\ &\dfrac{1}{2!}+\dfrac{1}{3!}+\cdots+\dfrac{1}{n!}\\\leqslant\ &\dfrac{1}{1\times 2}+\dfrac{1}{2\times 3}+\cdots +\dfrac{1}{(n-1)n}\\=\ &1-\dfrac{1}{n}<1=\ln e \\
+		\Rightarrow\ &\res{\left(1+\dfrac{1}{2!}\right)\left(1+\dfrac{1}{3!}\right)\cdots\left(1+\dfrac{1}{n!}\right)<e}\end{aligned}$$
+\end{enumerate}\par\hfill\tg{不等式}\easy
+
+\begin{que}
+	已知函数$f(x)=\ln ax-\dfrac{x-1}{x}$。
+	\begin{enumerate}
+		\item 求此函数的单调区间与最值。
+		\item 求证：对于任意正整数$n$，均有：$$1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}> \ln\dfrac{e^n}{n!}$$
+		\item 当$a=1$时，过点$(1,-1)$是否存在$y=f(x)$图像的切线？若存在，有多少条？若不存在，阐明理由。
+	\end{enumerate}
+\end{que}
+\sol 	\begin{enumerate}
+	\item $f'(x)=\dfrac{1}{x}\left(1-\dfrac{1}{x}\right)=0 \Rightarrow x=1$。若$a>0$，则$x>0$，$f(x)$在$(0,1)$上单调递减，在$[1,+\infty)$上单调递增。最小值$\min f(x)=f(1)=\ln a$，无最大值；若$a<0$，则$x<0$，$f(x)$在$\mathbb{R}^-$上单调递减，无最值。
+	\item 由上小题结论（也即\ref{ieq3}），若取$a>0$，则$\ln ax-1+\dfrac{1}{x}\geqslant\ln a\Rightarrow \dfrac{1}{x}\geqslant 1-\ln x$，当仅当$x=1$时取等，因此$$1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}> n-\ln\dfrac{1}{n!}=\ln\dfrac{e^n}{n!}$$
+	\item $a=1$条件下，$x>0$，$f(x)$在$(x_0,f(x_0))$处切线方程可写为：$y-f(x_0)=\dfrac{x_0-1}{x_0^2}(x-x_0)$。假使该切线过点$(1,-1)$，则$$-1-f(x_0)=\dfrac{x_0-1}{x_0^2}(1-x_0)\quad\Rightarrow\quad1-\dfrac{3}{x_0}+\dfrac{1}{x_0^2}-\ln x_0=g(x_0)=0$$
+	由于$g'(x)=-\dfrac{2}{x}\left(\dfrac{1}{x}-1\right)\left(\dfrac{1}{x}-\dfrac{1}{2}\right)=0\Rightarrow x_1=1,x_2=2$，故$g(x)$在$(0,1)$上单调减，在$(1,2)$上单调增，在$(2,+\infty)$上单调减，$g(1)=-1<0$，$g(0)=+\infty$，$g(2)=-\ln 2-\dfrac{1}{4}<0$，$g(+\infty)=-\infty$，因此$g(x)$有且仅有一个零点，这意味着所求切线存在且仅存在$\res{1}$条。
+\end{enumerate}\par\hfill\tg{不等式\ 切线方程}\easy
 
 什么\textbf{什么}\textsf{什么}\textit{什么}\textrm{什么}\textsc{什么}\textsl{什么}\texttt{什么}\tg{参数范围}\easy
 Many modern printed textbooks have adopted a layout with prominent 
