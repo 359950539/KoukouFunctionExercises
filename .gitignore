@@ -1,3 +1,4 @@
+main.*
 !fonts/**
 !.vscode/**
 !images/**
@@ -5,4 +6,3 @@
 !main.tex
 !main.pdf
 !.gitignore
-main.*
