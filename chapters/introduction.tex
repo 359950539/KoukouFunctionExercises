@@ -508,15 +508,15 @@ $$\begin{aligned}
 \section{引出不等式证明的综合题目}
 关于此类题目一些常用不等式的统一证明：
 \begin{enumerate}
-	\item \labeltext[［IEQ\ 1］]{［IEQ\ 1］$\mathbf{e^x\geqslant 1+x}$}{ieq1} \par
+	\item \labeltext[\green{［IEQ\ 1］}]{［IEQ\ 1］$\mathbf{e^x\geqslant 1+x}$}{ieq1} \par
 	该式截取自$e^x$的麦克劳林展开式$$e^x=1+x+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+\cdots+\dfrac{x^n}{n!}+\cdots$$前两项，截取更多项时证明相仿，只需多求几次导数，不赘述。\par
 	令$g(x)=e^x-(1+x)$，则$g'(x)=e^x-1$，$g''(x)=e^x>0$，因此$g'(x)$单调增，又$g'(0)=0$，因此$g(x)$在$(-\infty,0)$上单调递减，在$(0,+\infty)$上单调递增，$\forall x\in\mathbb{R}$，$$g(x)\geqslant g(0)=0\ \Leftrightarrow\ e^x\geqslant 1+x$$
 	当仅当$x=0$时取等。
-	 \item \labeltext[［IEQ\ 2］]{［IEQ\ 2］$\mathbf{\ln(1+x)\leqslant x}\ (x>-1),\mathbf{\ln(1+x)\geqslant x-\dfrac{x^2}{2}}\ (x\geqslant 0)$}{ieq2} \par
+	 \item \labeltext[\green{［IEQ\ 2］}]{［IEQ\ 2］$\mathbf{\ln(1+x)\leqslant x}\ (x>-1),\mathbf{\ln(1+x)\geqslant x-\dfrac{x^2}{2}}\ (x\geqslant 0)$}{ieq2} \par
 	该式截取自$\ln(1+x)$的麦克劳林展开式$$\ln(1+x)=x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\cdots+(-1)^{n+1}\dfrac{x^n}{n}+\cdots$$前两项，截取更多项时证明相仿，只需多求几次导数，不赘述，这里我们证第二式。\par
 	令$g(x)=\ln(1+x)-x+\dfrac{x^2}{2!}$，则$g'(x)=\dfrac{1}{1+x}-1+x$，$g''(x)=-\dfrac{1}{(1+x)^2}+1\geqslant 0$，$g'(0)=0$，因此$g(x)$在$[0,+\infty)$上单调增，$\forall x\geqslant 0$，$$g(x)\geqslant 0 \ \Rightarrow\ \ln(1+x)\geqslant x-\dfrac{x^2}{2}$$
 	当仅当$x=0$时取等。
-	\item \labeltext[［IEQ\ 3］]{［IEQ\ 3］$\mathbf{\ln x \leqslant 1-\dfrac{1}{x}}$}{ieq3} \par
+	\item \labeltext[\green{［IEQ\ 3］}]{［IEQ\ 3］$\mathbf{\ln x \leqslant 1-\dfrac{1}{x}}$}{ieq3} \par
 	令$g(x)=\ln x-1+\dfrac{1}{x}$，可证$g(x)\geqslant g(1)=0$，因此$\forall x\in \mathbb{R}^+,\ \ln x\geqslant 1-\dfrac{1}{x}$。
 	%\item \labeltext[［IEQ\ 3］]{$\mathbf{\ }$}{ieq2} \par
 \end{enumerate}
@@ -569,10 +569,114 @@ $$\begin{aligned}
 	\end{enumerate}
 \end{que}
 \sol \begin{enumerate}
-	\item $f'(x)=e^{-x}$。$a=0$时，$h(x)=\dfrac{x}{x+1}e^{-x}$，$$h'(x)=\dfrac{1-x-x^2}{(1+x)^2}e^{-x}=0\ \Rightarrow\ x_1=\dfrac{-1-\sqrt{5}}{2},\ x_2=\dfrac{-1+\sqrt{5}}{2},\ f''(x_1)>0,\ f''(x_2)<0$$
-	因此极小值$f(x_1)=\res{\dfrac{3+\sqrt{5}}{2}e^{\frac{1+\sqrt{5}}{2}}}$，极大值$$f(x_2)=\dfrac{3-\sqrt{5}}{2}e^{\frac{1-\sqrt{5}}{2}}$$
-	\item 显然首先$a\geqslant 0$。
+	\item $f'(x)=e^{-x}$。$a=0$时，$h(x)=\dfrac{x}{x+1}e^{-x}$，$$h'(x)=\dfrac{1-x-x^2}{(1+x)^2}e^{-x}=0\ \Rightarrow\ x_1=\dfrac{-1-\sqrt{5}}{2},\ x_2=\dfrac{-1+\sqrt{5}}{2}$$
+	$f''(x_1)>0$，$f''(x_2)<0$，因此极小值$f(x_1)=\res{\dfrac{3+\sqrt{5}}{2}e^{\frac{1+\sqrt{5}}{2}}}$，极大值$f(x_2)=\dfrac{3-\sqrt{5}}{2}e^{\frac{1-\sqrt{5}}{2}}$
+	\item 显然首先$a\geqslant 0$。我们来说明$f(x)\leqslant g(x)$的必要条件为$a\leqslant \dfrac{1}{2}$。记$h_a(x)=g(x)-f(x)=\dfrac{x}{ax+1}+e^{-x}-1$，那末$$h_a^\prime(x)=\dfrac{1}{(1+ax)^2}-e^{-x}\quad h_a^{\prime\prime}(x)=e^{-x}-\dfrac{2a}{(1+ax)^3}$$若$a>\dfrac{1}{2}$，则$h_a^{\prime\prime}(0)=1-2a<0$，因此$h_a^\prime(x)$在$x=0$处单调减\sidenote{「在某点处单调减」似乎听起来很奇怪，其实并不然，这是一种「微观」的分析方法，也是数学分析中非常初等和常用的分析方法，常被放到高中题目中，但不要求滴水不漏的叙述。对于性质良好的函数$f$（至少连续），在某点，譬如$x_0$，周围的一个小邻域内是有保号性的，若$f(x_0)>0$，那末$\exists \delta>0$\ s.t.\ $\forall |\varepsilon|<\delta$，$f(x_0+\varepsilon)>0$。在本题中$h_a(x)$无穷连续可导，$h_a^{\prime\prime}(0)<0$意味着$\exists\delta>0$，$h_a^\prime(x)$至少在$[0,\delta]$上单调减。这就是（连续）函数在某点处单调性的意义。解答中这一手法非常常用。}，$\exists \varepsilon>0$使得$h_a^\prime(\epsilon)<0\Rightarrow f(\varepsilon)>g(\varepsilon)$，这与题设矛盾，因此$a\leqslant \dfrac{1}{2}$。\par
+	我们再来说明$0\leqslant a\leqslant\dfrac{1}{2}$的充分性。设$a\leqslant \dfrac{1}{2}$，注意到$$h_a(x)\geqslant\dfrac{2}{x+2}+e^{-x}-1=m(x)\quad m'(x)=\dfrac{4e^{-x}\left[\left(e^{\frac{x}{2}}\right)^2-\left(1+\dfrac{x}{2}\right)^2\right]}{(2+x)^2}$$
+	由\ref{ieq1}知$\forall x\geqslant 0$，$e^\frac{x}{2}\geqslant 1+\dfrac{x}{2}$，故$$m'(x)\geqslant 0\ \Rightarrow\ m(x)\geqslant m(0)=0\ \Rightarrow\ h_a(x)\geqslant m(x)\geqslant0$$
+	因此$\forall\ 0\leqslant a\leqslant \dfrac{1}{2}$，$g(x)\geqslant f(x)$，充分性得证。综上，$\res{a\in\left[0,\dfrac{1}{2}\right]}$。
+	\item \blue{（方法一）}定义$h(x)=\ln x+\dfrac{4}{k+1}-2$，则$\forall x>0,\ h'(x)=\dfrac{(x-1)^2}{x(x+1)^2}\geqslant 0 $，$\forall x\geqslant 1,\ h(x)\geqslant h(1)=0$再结合\ref{ieq2}有$$\begin{aligned}&2-\dfrac{4}{x+1}\leqslant \ln n\leqslant \ln (x-1)\\\Leftrightarrow\ &2n-\sum_{k=1}^n\dfrac{4}{k+1}=\sum_{k=1}^n\leqslant \ln (n!)\leqslant\sum_{k=1}^n(k-1)=\dfrac{n(n-1)}{2}\\\Leftrightarrow\ &\exp\left(2n-\sum_{k=1}^n\dfrac{4}{k+1}\right)\leqslant n!\leqslant\exp\left(\dfrac{n(n-1)}{2}\right)\end{aligned}$$\par
+	\blue{（方法二）}由上一小题知，$a=\dfrac{1}{2}$，$x\in[0,2)$时时，$$1-e^{-x}\leqslant \dfrac{x}{\dfrac{1}{2}x+a}\ \Leftrightarrow\ x\leqslant\ln\dfrac{2+x}{2-x}\in\mathbb{R}^+$$故可令$$n=\dfrac{2+x}{2-x}\ \Leftrightarrow\ x=2-\dfrac{4}{n+1}\ \Rightarrow\ \ln n\geqslant 2-\dfrac{4}{n+1}$$由第一小题知$$h(x)\leqslant h(1)\Rightarrow xe^{-x}\leqslant\dfrac{1}{e}\Rightarrow \ln x\leqslant x-1,\ \forall\ x\geqslant1$$，因此$2-\dfrac{4}{k+1}\leqslant \ln k\leqslant k-1$以下同方法一\sidenote{对于以证明不等式为目的的题目来说，虽然不等式的证明依赖于前行的小题，但对于简单的题目来说，可以不必拘泥于题目内容，独立证明也常常可以证出。}。
+\end{enumerate}\par\hfill\tg{取值范围\ 不等式\ 分析}\normal
+
+\begin{que}
+	对于函数$f(x),x\in D$，若定义域上恒有$f'(x)>f(x)$成立，则称函数$f(x)$是$D$上的J函数。
+	\begin{enumerate}
+		\item 当$f(x)=me^x\ln x$是定义域上的J函数时，求$m$的取值范围。
+		\item 若函数$g(x)$为$(0,+\infty)$上的J函数，
+		\begin{enumerate}
+			\item 试比较$g(a)$与$e^{a-1}g(1)$的大小。
+			\item 求证：$\forall\ x_1,x_2,\cdots,x_n>1$，$$g(\ln(x_1+x_2+\cdots+x_n))>g(\ln x_1)+g(\ln x_1)+\cdots+g(\ln x_n)$$
+		\end{enumerate}
+	\end{enumerate}
+\end{que}
+\sol\sidenote{本题中万不可以出现$f''(x)$，这是由于题干中未给出$f(x)$存在二阶导数的条件。} \begin{enumerate}
+	\item $f(x)=me^x\ln x$定义域为$\mathbb{R}+$，$$f'(x)=me^x\left(\ln x+\dfrac{1}{x}\right)>f(x)=me^x\ln x\ \Rightarrow\ \dfrac{me^x}{x}>0\ \Rightarrow\ \res{m>0}$$
+	\item 设\sidenote{$f'(x)=f(x)$描述的函数为$f(x)=e^x$。直觉上，$f'(x)>f(x)$描述了比$e^x$增长快的函数，故设$h(x)=e^{-x}g(x)$。这一手法十分常用。}$h(x)=e^{-x}g(x)$，那末$h'(x)=e^{-x}\left[g'(x)-g(x)\right]>0$，故$h(x)$单调增。$a=1$时，$g(a)=e^{a-1}g(1)$；$a>1$时，$g(a)=e^ah(a)>e^ah(1)=e^{a-1}g(1)$；当$a<1$时，$g(a)=e^ah(a)<e^ah(1)=e^{a-1}g(1)$。\par
+	不妨设$1<x_1\leqslant x_2\leqslant\cdots \leqslant x_n$，则由$h(x)$在$\mathbb{R}^+$上单调增知$$\begin{aligned}
+		&\quad\  \forall 1\leqslant k\leqslant n,\ h(x_k)\leqslant h(x_n)\Rightarrow g(\ln x_k)\leqslant \dfrac{x_k}{x_n}g(\ln x_n)\\
+		\Rightarrow\ &\quad\ g(\ln x_1)+g(ln x_2)+\cdots+g(\ln x_n)\leqslant \dfrac{x_1+x_2+\cdots+x_n}{x_n}g(\ln x_n)\\
+		&=e^{\ln(x_1+x_2+\cdots+x_n)}h(\ln x_n)<e^{\ln(x_1+x_2+\cdots+x_n)}h(\ln(x_1+x_2+\cdots+x_n))\\
+		&=g(ln(x_1+x_2+\cdots+x_n))
+	\end{aligned}$$
+\end{enumerate}\par\hfill\tg{不等式}\normal
+
+\begin{que}
+	已知函数$f(x)=e^x-ax-a$。
+	\begin{enumerate}
+		\item 若$a>0$，$f(x)\geqslant 0$对一切$x\in\mathbb{R}$恒成立，求$a$的最大值。
+		\item 设$g(x)=f(x)+\dfrac{a}{e^x}$，且$A(x_1,y_1),\ B(x_2,y_2)\ (x_1\neq x_2)$是曲线$y=g(x)$上任意两点。若对于任意$a\leqslant -1$，直线$\text{AB}$的斜率恒大于常数$m$，求$m$的取值范围。
+		\item 求证：$1^n+3^n+\cdots+(2n-1)^n<\dfrac{\sqrt{e}}{e-1}(2n)^n,\ n\in\mathbb{N}^+$。
+	\end{enumerate}
+\end{que}
+\sol \begin{enumerate}
+	\item \sidenote{求取值范围与求最大值是不同的，严格的取值范围要求可取到范围内任意值，最大值只要求小于它并可取到这一最大值。}$f(0)=1-a\geqslant 0\Rightarrow a\leqslant 1$，由\ref{ieq1}，$$f(x)=e^x-x-1+(1-a)x+(1-a)\geqslant (x+1)-x-1=0,\ \forall x\in[0,+\infty)$$因此$\res{a\in(0,1]}$。
+	\item 由\ref{cauchy}\sidenote{可如此叙述：不妨设$x_2>x_1$，由题意，$$\dfrac{g(x_2)-g(x_1)}{x_2-x_1}>m$$$$\Leftrightarrow g(x_2)-mx_2>g(x_1)-mx_1$$故$F(x)=g(x)-mx$单调增，$F'(x)>0$，$g'(x)>m$，同时$g'(x)>m$时$F(x)$单调增。故原命题等价于……}，原命题等价于$\forall\ a\leqslant -1,\ \forall\ x\in\mathbb{R},\ g'(x)>m$，而$$g'(x)=e^x-a-ae^{-x}\geqslant 2\sqrt{e^x\cdot (-a)e^{-x}}-a=2\sqrt{-a}-a=(\sqrt{-a}+1)^2-1\geqslant 3$$当仅当$a=-1,x=\dfrac{1}{2}\ln(-a)=0$时取等。因此$\res{m<3}$。
+	\item 由\ref{ieq1}，取$x=-\dfrac{k}{2n},\ k\in \mathbb{N}$，得$e^{-\frac{k}{2n}}\geqslant 1-\dfrac{k}{2n}=\dfrac{2n-k}{2n}$，因此$$\begin{aligned}&\quad\ \ \dfrac{2n-k}{2n}<e^{-\frac{k}{2n}}\Leftrightarrow \left(\dfrac{2n-k}{2n}\right)^n<\left(\sqrt{e}\right)^{-k}\\&\Leftrightarrow\left(\dfrac{1}{2n}\right)^n+\left(\dfrac{3}{2n}\right)^n+\cdots+\left(\dfrac{2n-1}{2n}\right)^n<\left(\sqrt{e}\right)^{-1}+\left(\sqrt{e}\right)^{-3}+\cdots+\left(\sqrt{e}\right)^{-(2n-1)}\\&\Leftrightarrow\left(\dfrac{1}{2n}\right)^n+\left(\dfrac{3}{2n}\right)^n+\cdots+\left(\dfrac{2n-1}{2n}\right)^n<\dfrac{(\sqrt{e})^{-1}(1-(\sqrt{e})^{-n})}{1-e^{-1}}<\dfrac{\sqrt{e}}{e-1}\\&\Leftrightarrow\ 1^n+3^n+\cdots+(2n-1)^n<\dfrac{\sqrt{e}}{e-1}(2n)^n\end{aligned}$$
+\end{enumerate}\par\hfill\tg{取值范围\ 不等式\ 割线斜率}\normal
+
+\begin{que}
+	已知函数$f(x)=a\ln(x+1)-ax-x^2$。
+	\begin{enumerate}
+		\item 若$x=1$为函数$f(x)$的极值点，求$a$的值。
+		\item 讨论$f(x)$在定义域上的单调性。
+		\item 证明：$\forall\ n\in\mathbb{N}^+$，$\ln(n+1)<2+\dfrac{3}{2^2}+\dfrac{4}{3^2}+\cdots+\dfrac{n+1}{n^2}$。
+	\end{enumerate}
+\end{que}
+\sol \begin{enumerate}
+	\item $f'(x)=\dfrac{a}{x+1}-a-2x$，$f'(1)=\dfrac{a}{2}-a-2=0\Rightarrow\res{a=\dfrac{4}{3}}$。
+	\item $f'(x)=0\Rightarrow 2x^2+(2+a)x=0\Leftrightarrow x_1=0,\ x_2=-\dfrac{2+a}{2}$，\begin{enumerate}
+		\item 若$-2<a<0$，$0>x_2>-1$，则$f(x)$在$\left(-\dfrac{2+a}{2},0\right)$上单调增，在$\left(-1,-\dfrac{2+a}{2}\right)$和$(0,+\infty)$上单调减。
+		\item 若$a\geqslant 0$，$x_2\leqslant -1$，则$f(x)$在$\left(-1,0\right)$上单调增，在$\left(0,+\infty\right)$上单调减。
+		\item 若$a<-2$，$x_2>0$，则$f(x)$在$\left(0,-\dfrac{2+a}{2}\right)$上单调增，在$\left(-\dfrac{2+a}{2},+\infty\right)$和$(-1,0)$上单调减。
+		\item 若$a=-2$，$x_2=0$，则$f(x)$在$(-1,+\infty)$上单调减。
+	\end{enumerate}
+	\item 令$a=1$，则$f(x)$在$(0,+\infty)$上单调减，又$f(0)=0$，故\sidenote{这个不等式的精细程度很差，不如\ref{ieq2}。因此本小题的放缩非常疏松，甚至可以舍弃掉所有二次项。}$\forall\ x>0,\ f(x)<0\Rightarrow \ln (x+1)<x+x^2$，因此
+	$$\begin{aligned}
+		&\quad\ \ 2+\dfrac{3}{2^2}+\dfrac{4}{3^2}+\cdots+\dfrac{n+1}{n^2}\\
+		&>\ln(1+1)+\ln\left(1+\dfrac{1}{2}\right)+\cdots+\ln\left(1+\dfrac{1}{n}\right)\\
+		&=\ln\dfrac{2}{1}+\ln\dfrac{3}{2}+\cdots+\ln\dfrac{n+1}{n}\\
+		&=\ln(n+1)-\ln 1=\ln(n+1)
+	\end{aligned}$$\par\hfill\tg{不等式}\easy
+	\begin{kaiti}
+	事实上，$1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}>\ln(n+1)$，这是更常见的一个不错的不等式。我们可以用定积分重新解释它：$$\sum_{k=1}^n=\dfrac{1}{n}<\int_{x=1}^(n+1)\dfrac{1}{x}\text{d}x=[\ln x]_1^{n+1}=\ln(n+1)$$
+	\end{kaiti}
 \end{enumerate}
+
+\begin{que}
+	已知函数$f(x)=ax^2+\ln(x+1)$。\begin{enumerate}
+		\item 当$a=-\dfrac{1}{4}$时，求$f(x)$的单调区间。
+		\item 当$x\in[0,+\infty)$时，函数$y=f(x)$图像上的点都在$\left\{\begin{aligned}
+			&x\geqslant 0\\&y-x\leqslant 0
+		\end{aligned}\right.$所表示的平面区域内，求实数$a$的取值范围。
+		\item 求证：$\left(1+\dfrac{2}{2\times3}\right)\left(1+\dfrac{4}{3\times5}\right)\left(1+\dfrac{8}{5\times8}\right)\cdots\left[1+\dfrac{2^n}{(2^{n-1}+1)(2^n+1)}\right]<e$
+	\end{enumerate}
+\end{que}
+\sol \begin{enumerate}
+	\item 
+\end{enumerate}
+
+\section{与割线斜率相关的综合题目}
+\begin{thm}
+	\labeltext[\green{\ 柯西中值定理\ }]{\heiti{\blue{\textbf{柯西中值定理}}}}{cauchy}\ \ 若函数$f(x),g(x)$满足以下条件：\ ①\ 在$[a,b]$上连续；②\ 在$(a,b)$；③\ $\forall x\in(a,b),\ g'(x)\neq 0$。那末有以下结论：$$\exists \xi \in(a,b),\ \text{s.t.\ }\dfrac{f(a)-f(b)}{g(a)-g(b)}=\dfrac{f'(\xi)}{g'(\xi)}$$特别地，取$g(x)=x$，我们得到\textbf{拉格朗日中值定理}：$$\exists  \xi \in(a,b),\ \text{s.t.\ }\dfrac{f(a)-f(b)}{a-b}=f'(\xi)$$
+\end{thm}
+\begin{kaiti}
+	\heiti{证明\ \ }设$$F(x)=[f(a)-f(b)][g(x)-g(a)]-[g(a)-g(b)][f(x)-f(a)]$$易知$F(x)$在$[a,b]$上连续，在$(a,b)$上可导，且$F(a)=F(b)=0$，那末由\href{http://course.shufe.edu.cn/gdsx/upfiles/file/20160307155320.pdf}{罗尔(Rolle)定理}\sidenote{这要从柯西列开始写了，能写三四页( ﾟДﾟ)。因为都是非常初等的定理，请自行翻阅链接材料吧。}可知，$\exists\ \xi\in(a,b),\ \text{s.t.\ }F'(\xi)$，稍作整理即得原式。
+\end{kaiti}\par
+这一定理的特殊形式曾常被作为高中考题，基本是上述证明过程的特化，因此了解它是有益的。在答题中不可直接食用，但不妨作为引理简单证一下后使用。\par\vspace{0.3cm}
+\begin{que}
+	已知函数$f(x)=\ln x-\dfrac{a(x-1)}{(x+1)}$，$a\in\mathbb{R}$。
+	\begin{enumerate}
+		\item 若$x=2$是函数的极值点，求曲线$y=f(x)$在$(1,f(1))$处的切线方程。
+		\item 若函数$f(x)$在$(0,+\infty)$上为单调增函数，求$a$的取值范围。
+		\item 设$m,n$为正实数，$m>n$，求证：$\dfrac{m-n}{\ln m-\ln n}<\dfrac{m+n}{2}$。
+	\end{enumerate}
+\end{que}
+\sol \begin{enumerate}
+	\item $f'(x)=\dfrac{x^2+1-2(a-1)x}{x(1+x)^2}$，若$x=2$是极值点，则$f'(2)=\dfrac{9-4a}{18}=0\Rightarrow\res{a=\dfrac{9}{4}}$。
+	\item 首先$f'(1)=1-\dfrac{a}{2}\geqslant 0\ \Rightarrow\ a\leqslant 2$，这是一个必要条件。当$a\leqslant 2$时，$f'(x)=\dfrac{(x-1)^2+(2-a)x}{x(1+x)^2}>1$，恰有$f(x)$单调增，这说明了充分性，因此$\res{a\leqslant 2}$。
+	\item 这一不等式来源于$\ln x$的上凸性。我们取$a=2$，$f(1)=0$，由单调性，有不等式$\forall\ x>1,\ \ln x>\dfrac{2(x-1)}{(x+1)}$，因$m>n$，代$x=\dfrac{m}{n}$得$$\ln m-\ln n>\dfrac{2(m-n)}{m+n}\ \Leftrightarrow\ \dfrac{m-n}{\ln m-\ln n}<\dfrac{m+n}{2}$$
+\end{enumerate}\par\hfill\tg{取值范围\ 不等式}\easy
 
 什么\textbf{什么}\textsf{什么}\textit{什么}\textrm{什么}\textsc{什么}\textsl{什么}\texttt{什么}\tg{参数范围}\easy
 Many modern printed textbooks have adopted a layout with prominent 
